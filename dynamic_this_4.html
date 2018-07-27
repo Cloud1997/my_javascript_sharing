@@ -1,0 +1,37 @@
+<html>
+<script>
+    
+  class A{
+      constructor(a){
+          this.name=a;
+      }
+      print(){
+          console.log(this.name);
+      }
+  }
+    class C{
+        construct(c){
+            this.cc=c;
+        }
+        getC(){
+            console.log(this.cc);
+        }
+    }
+    
+    class B extends A,C{
+        constructor(b,c,d){
+            super(b);
+            this.skill=d;
+        }
+        mySkill(){
+            console.log(this.skill);
+        }
+    }
+    var x=new B(1,2);
+    x.mySkill();
+    
+    
+    
+    </script>
+</html>
+    

@@ -1,0 +1,68 @@
+<html>
+    <script>
+        
+        function Person(a,b,c){
+        this.name="hehe";
+          this.age=b;
+
+       }
+       Person.prototype.print=function(){
+           console.log("print");
+       }
+       //声明Eng
+       function Eng(l){
+           this.level=l;
+           this.name="haha";
+       }
+       Eng.prototype.showLevel=function(){
+           console.log(this.level);
+       }
+       //声明ITer
+       function ITer(a,b,c,skill,level){
+           this.level=level;
+           this.name="haha";
+          this.name="hehe";
+          this.age=b;
+           
+           this.skill=skill;
+           
+       }
+        ITer.prototype=Object.create(Person.prototype);
+       Object.assign(ITer.prototype,Eng.prototype);
+       ITer.prototype.competence=function(){
+               console.log("ECMAScript");
+           }
+       var x=new ITer("zf",22,"","javascript","junior");
+        console.log(x.name);
+       x.showLevel();
+       x.competence();
+       x.print();
+        class A{
+            constructor(a){
+                this.name=a;
+            }
+            print(){
+                
+            }
+        }
+        class B extends A{
+            constructor(a,b){
+                super(a);
+                this.xx=b;
+            }
+            printX(){
+                console.log(111);
+            }
+        }
+        let zz=new B(1,2);
+        zz.printX();
+//        console.log(typeof "class);
+        console.log(x instanceof Person,x instanceof Eng);
+        
+   
+
+  
+
+
+    </script>
+</html>

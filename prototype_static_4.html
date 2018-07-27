@@ -1,0 +1,38 @@
+<html>
+    <script>
+        
+        function Person(a,b,c){
+        this.name=a;
+        var d="hehe";
+        this.age=b;
+        this.show=function(){
+            console.log("name="+this.name+",age="+this.age+" "+c+" "+d);
+        };
+       }
+     
+
+       Person.compare=(a,b)=>{
+           if(a instanceof Person&&b instanceof Person){
+               return a.name>b.name;
+           }else{
+               throw "must use Person as param";
+           }
+           
+       }
+        var x=new Person("zf",18,"haha");
+  
+
+        var y=new Person("someone",100);
+
+        try{
+        console.log(Person.compare(x,y));
+        }catch(e){
+            console.log(e);
+        }
+    
+        x.compare(x,y);
+
+
+
+    </script>
+</html>

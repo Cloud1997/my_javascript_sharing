@@ -1,0 +1,70 @@
+<html>
+    <script>
+        
+        function Person(a,b,c){
+        this.name=a;
+//        var d="hehe";
+        this.age=b;
+//        this.show=function(){
+//            console.log("name="+this.name+",age="+this.age+" "+c+" "+d);
+//        };
+       }
+       Person.prototype.print=function(){
+           console.log("print");
+       }
+
+       //ITer 继承Person
+       function ITer(a,b,c,skill){
+//           Person.call(this,a,b,c);//this method could solve all problem within constructor;
+           this.skill=skill;
+           this.competence=function(){
+               console.log(this.skill);
+           } 
+       }
+
+       console.log("Example 1");
+         ITer.prototype=Object.create(Person.prototype);
+        console.log(ITer instanceof Function);
+        
+       var x=new ITer("zf",22,"","javascript");
+        
+//        console.log(ITer.prototype.skill);
+//        for(let zz in ITer.prototype){
+//            console.log(zz);
+//        }
+        
+//       console.log(x.show11);
+        console.log(x instanceof Person);
+       x.print();
+        x.show();
+//     
+//    ITer.prototype.myFunc=function(){
+//               console.log("ECMAScript");
+//           }
+//    
+//       var x=new ITer("zf",22,"","javascript");
+//        console.log("Example 2");
+//            x.show();
+//            x.print();
+//            x.myFunc();
+//       x.competence();
+//
+//       ITer.prototype.competence=function(){
+//               console.log("ECMAScript");
+//           }
+//           ITer.prototype.myFunc=function(){
+//               console.log("ECMAScript");
+//           }
+//           ITer.prototype.print=()=>console.log('lalilulelo');
+//           var x=new ITer("zf",22,"","javascript");
+//        console.log("Example 3");
+//     x.myFunc();
+//       x.competence();
+//       x.print();
+   
+
+  
+
+
+    </script>
+</html>

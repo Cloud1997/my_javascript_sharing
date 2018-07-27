@@ -1,0 +1,49 @@
+<html>
+<script>
+//利用闭包
+    console.log("use enclosure");
+function Enclosure(){
+var x="haha";
+var y=function(){
+    console.log(x);
+}
+return {callme(){y();}};
+}
+
+
+var x=Enclosure();
+x.callme();
+   console.log(Object.getOwnPropertyNames(x));
+
+    //利用ES6的新特性：Symbol
+    console.log("use Symbol");
+function UseSymbol(name,age){
+    this.name=name;
+    this.age=age;
+    const p1=Symbol();
+    this[p1]="haha";
+    const p2=Symbol();
+    this[p2]=function(){
+        console.log("private method",this[p1]);
+    }
+
+    this.print=function(){
+        this[p2]();
+    }
+
+}
+//        UseSymbol.prototype.print=function(){
+//        this[p2]();
+//    }
+console.log(Symbol("f")===Symbol("f"));
+console.log(Symbol()===Symbol());
+console.log(Symbol.for("g")===Symbol("g"));
+console.log(Symbol.for("g")===Symbol.for("g"));
+
+let y=new UseSymbol("zf",33);
+y.print();
+console.log(Object.getOwnPropertyNames(y));
+
+
+</script>
+</html>

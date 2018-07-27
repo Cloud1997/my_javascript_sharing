@@ -1,0 +1,32 @@
+<html>
+<script>
+    
+var x={name:"zhang fan",
+       print(){
+           console.log(this.name);
+       }   
+      };
+    
+    x.name="no body";
+    x.print();
+    //扩展新的属性和函数
+    x.career="IT";
+    x.work=function(a){
+        console.log(a+" "+this.career+" "+this.name);
+    }
+    
+    x.work("Tieto");
+    //属性的删除
+    delete x.name;
+    x.print();
+    
+    //通过[]动态扩展属性
+    let y='ex';
+    x[y]="user defined";
+    console.log(x[y]+" "+x.ex)
+    
+    x.print=undefined;
+    x.print();
+
+</script>
+</html>

@@ -1,0 +1,43 @@
+<html>
+<script>
+    //函数参数的动态性，参数类型和个数
+    function myFunc(a,b){
+        console.log(a,b);
+    }
+    
+    console.log("".length);
+    let x=1;
+    console.log(typeof .__proto__);
+    console.log(this.myFunc);//函数也是一个对象，javascript只有对象没有类
+    
+    myFunc(true,false);
+    
+    myFunc("a");
+    
+    myFunc(1,"22",333);
+    
+    function myFunc_new(a){
+        var x=Array.from(arguments);//函数的arguments对象中可以取得所有实参
+        console.log(x);
+        var y="";
+        for(let i of x){
+            y+=i;
+        }
+        console.log(y);
+    }
+    
+    myFunc_new(1,"22",true);
+    
+    //函数返回值的动态性
+    function another(a){
+        if(a!==undefined){
+        return a===1?true:""+a;
+        }
+    }
+    console.log(another(1));
+    console.log(another("haha"));
+    console.log(another());
+    
+    
+    </script>
+</html>

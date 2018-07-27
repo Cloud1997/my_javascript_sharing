@@ -1,0 +1,33 @@
+<html>
+    <script>
+        
+        function Person(a,b,c){
+        this.name=a;
+        var d="hehe";
+        this.age=b;
+        this.show=function(){
+            console.log("name="+this.name+",age="+this.age,c,d);
+        };
+       }
+        var x=new Person("zf",18,"haha");
+        
+        var y=new Person("someone",100);
+    
+        
+        x.future=function(){
+            console.log(this.age+10);
+        }
+        x.future();
+
+ //workaround, 注意Object.create()是一个类似静态方法的function
+        y=Object.create(x);
+        y.future();
+
+
+        
+       
+
+
+
+    </script>
+</html>
